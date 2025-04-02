@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TV Shows</title>
+    <link href="/public/styles/main.css" rel="stylesheet">
+</head>
+<body>
+<h1>TV Shows</h1>
+<a href="/tvshows/upload">Upload</a>
+<table>
+    <thead>
+        <tr>
+            <th>Show</th>
+            <th>Season</th>
+            <th>Episode</th>
+        </tr>
+    </thead>
+    <tbody>
+    {{#each shows}}
+    <tr>
+        <td>
+            <img class="albumcover" src="/media/{{artist}}/{{album}}/cover.jpg">
+        </td>
+        <td>{{show}}</td>
+        <td>{{season}}</td>
+        <td>{{episode}}</td>
+        <td><a href="/media/{{artist}}">{{Episode}}</a></td>
+        <td><a href="/media/{{artist}}/{{album}}">{{album}}</a></td>
+        <td>
+            <audio controls>
+                <source src="/media/{{artist}}/{{album}}/{{filename}}">
+                our browser does not support the audio element.
+            </audio>
+        </td>
+        <td>{{year}}</td>
+    </tr>
+    {{/each}}
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+.poster {
+    width: 50px;
+    height: 50px;
+}
+body {
+    background-color: white;
+}
+.player-container {
+    display: flex;
+    padding:20px;
+    max-width: 700px;
+    margin: auto;
+}
+.album-cover {
+    width: 200px;
+    height: 200px;
+    background: rgb(78, 78, 78);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+.song-info {
+    margin-left: 20px;
+}
+.song-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.progress-bar {
+    height: 10px;
+    background: gray;
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+}
+.progress-bar-inner {
+    width: 40%;
+    height: 100%;
+    background: red;
+}
+.channel-bars {
+    margin-top: 10px;
+}
+.channel-bar {
+    height: 8px;
+    background: lightblue;
+    width: 80%;
+    margin-top: 5px;
+    position: relative;
+}
+.channel-label {
+    font-size: 0.8rem;
+    position: absolute;
+    right: 0;
+   
