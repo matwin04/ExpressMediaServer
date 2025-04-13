@@ -1,9 +1,44 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <title>MyMedia Server</title>
-    <link href="/public/styles/main.css" rel="stylesheet">
+  <title>Express Media Server</title>
 </head>
 <body>
-    <h1 class="title">Express Media Server</h1>
-    <a href="/login">Login</a>
+  <h1>Welcome to Express Media Server</h1>
+  <p><a href="/music/upload">🎵 Upload Music</a></p>
+  <p><a href="/tvshows/upload">📺 Upload TV Show</a></p>
+  <p><a href="/videos/upload">🎬 Upload Video</a></p>
+  <p><a href="/photos/upload">🖼️ Upload Photo</a></p>
+
+  <h2>Your Music</h2>
+  {{#each music}}<div><b>{{artist}} - {{album}}</b>: {{filename}}</div>{{/each}}
+
+  <h2>Your TV Shows</h2>
+  {{#each tvshows}}<div>{{show_name}} - S{{season}}E{{episode}}: {{filename}}</div>{{/each}}
+
+  <h2>Your Videos</h2>
+  {{#each videos}}<div>
+    <video width="320" controls><source src="{{path}}" type="video/mp4"></video>
+    <p>{{filename}}</p>
+  </div>{{/each}}
+
+  <h2>Your Photos</h2>
+  {{#each photos}}<div>
+    <img src="{{path}}" width="150" /><p>{{filename}}</p>
+  </div>{{/each}}
 </body>
+</html>
+""",
+
+    "views/music_upload.html": """
+<!DOCTYPE html>
+<html>
+<head><title>Upload Music</title></head>
+<body>
+  <h1>Upload Music</h1>
+  <form method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".mp3,.wav,.flac,.m4a,.ogg,.aiff" required>
+    <button type="submit">Upload</button>
+  </form>
+</body>
+</html>

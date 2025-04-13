@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Upload TV Show</title></head>
+<body>
+  <h1>Upload TV Show</h1>
+  <form method="post" enctype="multipart/form-data">
+    <input type="text" name="show_name" placeholder="Show Name" required><br>
+    <input type="number" name="season" placeholder="Season" required><br>
+    <input type="number" name="episode" placeholder="Episode"><br>
+    <input type="file" name="file" accept="video/*" required><br>
+    <button type="submit">Upload</button>
+  </form>
+</body>
+</html>

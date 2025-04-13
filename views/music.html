@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>{{title}}</title></head>
+<body>
+  <h1>{{title}}</h1>
+  <table border="1">
+    <tr><th>Artist</th><th>Album</th><th>Filename</th><th>Preview</th></tr>
+    {{#each rows}}
+    <tr>
+        <td>{{title}}</td>
+        <td>{{artist}}</td>
+        <td>{{album}}</td>
+        <td>{{filename}}</td>
+        <td><audio controls src="{{path}}"></audio></td>
+    </tr>
+    {{/each}}
+  </table>
+</body>
+</html>
