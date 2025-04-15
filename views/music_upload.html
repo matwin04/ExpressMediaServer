@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/public/style.css" />
 </head>
 <body>
+  {{>navbar}}
   <h1>🎵 Upload Music</h1>
 
   <form action="/music/upload/{{username}}" method="POST" enctype="multipart/form-data">

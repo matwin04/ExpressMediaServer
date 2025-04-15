@@ -37,7 +37,7 @@ app.use(session({
   saveUninitialized: false,
 }));
 
-const baseDir = process.env.MEDIA_BASE || "/NAS/MediaNet";
+const baseDir = process.env.MEDIA_BASE || "/NAS/ExpressMediaServer";
 const paths = {
   music: process.env.MUSIC_PATH || "Music",
   videos: process.env.VIDEO_PATH || "Videos",
@@ -106,13 +106,14 @@ setupDB();
 app.get("/", (req, res) => {
   res.render("index", { title: "Home" });
 });
-
-app.get("/signup", (req, res) => {
-  res.render("signup", { title: "Sign Up" });
-});
-
-app.get("/login", (req, res) => {
-  res.render("login", { title: "Login" });
+app.get("/music", async (req,res)=>{
+  try {
+    const rows = await sql`SELECT * FROM music ORDER BY id`;
+    res.render("music",{rows});
+  } catch (err) {
+    console.error("ERROR LOADING MUSIC: ",err);
+    res.status(500).send("ERROR LOADING MUSIC");
+  }
 });
 
 app.post("/api/signup", async (req, res) => {

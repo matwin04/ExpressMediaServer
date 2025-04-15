@@ -168,6 +168,7 @@
     "unpipe": "^1.0.0",
     "utils-merge": "^1.0.1",
     "vary": "^1.1.2",
+    "vercel": "^41.6.0",
     "webdav-server": "^2.6.2",
     "which": "^2.0.2",
     "wordwrap": "^1.0.0",

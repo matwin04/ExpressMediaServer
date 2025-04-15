@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head><title>{{title}}</title></head>
+<head>
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+</head>
 <body>
-  <h1>{{title}}</h1>
-  <table border="1">
-    <tr><th>Artist</th><th>Album</th><th>Filename</th><th>Preview</th></tr>
+  {{>navbar}}
+  <div class="mt-5 background-primary">
+    <h1>Music</h1>
+  </div>
+  <table border="1" class="table table-striped">
+    <tr>
+      <th>Artist</th>
+      <th>Album</th>
+      <th>Filename</th>
+      <th>Preview</th>
+    </tr>
     {{#each rows}}
     <tr>
         <td>{{title}}</td>
         <td>{{artist}}</td>
         <td>{{album}}</td>
-        <td>{{filename}}</td>
+        <td>{{uploaded_at}}</td>
         <td><audio controls src="{{path}}"></audio></td>
     </tr>
     {{/each}}
